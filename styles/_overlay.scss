@@ -1,0 +1,82 @@
+.overlay {
+    position:fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba($color: #000000, $alpha: 0.5);
+    z-index: 10000;
+    #cerrar {
+        color: white;
+        position: fixed;
+        font-size: 2rem;
+        margin:1rem;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+    }
+    .button {
+        position: fixed;
+        font-size: 1.5rem;
+        margin:1rem;
+        bottom: 0;
+        right: 0;
+        cursor: pointer;
+        display: inline-block;
+        background-color: #075e54;
+        font-family: 'Neucha', cursive;
+        &:link {
+            padding: 0.5em 1em;
+            border-radius: 2em;
+            text-decoration: none;
+            color:white;
+        }
+        &:visited {
+            padding: 0.5em 1em;
+            border-radius: 2em;
+            text-decoration: none;
+            color:white;          
+        }
+    }
+    .aviso {
+        color: white;
+        font-weight: bold;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        margin: 1em;
+        max-width: 60%;
+        text-shadow: 2px 0 #000,
+                    -2px 0 #000,
+                    0 2px #000,
+                    0 -2px #000,
+                    2px 2px #000,
+                    -2px -2px #000,
+                    2px -2px #000,
+                    -2px 2px #000;
+    }
+    .card {
+        min-width: 200px;
+        width: 800px;
+        max-width: calc(100% - 2em);
+        max-height: calc(100vh - 6em);
+        position: absolute;
+        justify-content: center;
+        background: white;
+        padding: 1em;
+        margin: 1em;
+        margin-bottom: 2em;
+        border-radius: 1em;
+        overflow: auto;
+    }
+}
+
+.ocultar {
+    display: none;
+}

@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.grid {
+    .item {
+        width: 50%;
+        .item-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            .nombre-modelo {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .color {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+            img {
+                width: 100%;
+                display: block;
+            }
+            .panoramica {
+                &.no-mostrar {
+                    display: none;
+                }
+                &.alargar{
+                    width: 100%;
+                }
+            }
+            .agradecimiento, .diploma, .testimonial, .individual{
+                width: 50%;
+                display: block;
+                &.no-mostrar {
+                    display: none;
+                }
+                &.alargar{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
