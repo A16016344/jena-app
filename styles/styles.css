@@ -523,7 +523,81 @@ template {
   overflow: auto;
 }
 
+.overlay .card img {
+  max-width: 100%;
+  display: block;
+}
+
 .ocultar {
   display: none;
+}
+
+.header {
+  background: #7e000d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header .logo {
+  max-width: calc(100% - 50px);
+}
+
+.header .logo img {
+  max-width: 100%;
+  display: block;
+}
+
+.header .menu-icon {
+  background: #FFF;
+  margin: 5px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 0.5em;
+  border-radius: 1em;
+}
+
+.main {
+  max-width: 800px;
+  margin: auto;
+}
+
+.main nav .linea, .main nav .tipo-cuadro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.5em;
+  text-transform: capitalize;
+}
+
+.main nav .linea a, .main nav .tipo-cuadro a {
+  padding: 0.5em;
+  border-radius: 1em;
+  -webkit-transition: all ease 300ms;
+  transition: all ease 300ms;
+}
+
+.main nav .linea a:hover, .main nav .tipo-cuadro a:hover {
+  background: #aaa;
+}
+
+.main nav .linea a:link, .main nav .linea a:visited, .main nav .tipo-cuadro a:link, .main nav .tipo-cuadro a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.main nav .linea a.activo, .main nav .tipo-cuadro a.activo {
+  font-weight: bold;
+  background: #7e000d;
+  color: white;
 }
 /*# sourceMappingURL=styles.css.map */

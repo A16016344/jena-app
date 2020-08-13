@@ -1,0 +1,21 @@
+$colorPrimary : #7e000d;
+
+.header {
+    background: $colorPrimary;
+    display: flex;
+    justify-content: space-between;
+    .logo {
+        max-width: calc(100% - 50px);
+        img {
+            max-width: 100%;
+            display: block;
+        }
+    }
+    .menu-icon {
+        background: #FFF;
+        margin: 5px;
+        align-self: center;
+        padding: 0.5em;
+        border-radius: 1em;
+    }
+}

@@ -1,0 +1,30 @@
+.main {
+    max-width: 800px;
+    margin: auto;
+    nav {
+        .linea, .tipo-cuadro {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0.5em;
+            text-transform: capitalize;
+            a {
+                padding: 0.5em;
+                border-radius: 1em;
+                transition: all ease 300ms;
+                &:hover {
+                    background: #aaa;
+                }
+                &:link, &:visited {
+                    text-decoration: none;
+                    color: black;
+                }
+                &.activo {
+                    font-weight: bold;
+                    background: $colorPrimary;
+                    color: white;
+                }
+            }
+        }
+    }
+}

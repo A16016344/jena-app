@@ -12,18 +12,6 @@ const agradecimiento = muuriSection.querySelectorAll(".agradecimiento");
 const diploma = muuriSection.querySelectorAll(".diploma");
 const testimonial = muuriSection.querySelectorAll(".testimonial");
 const individual = muuriSection.querySelectorAll(".individual");
-// Asignamos a una contante la lista de tipos de cuadro a mostrar
-const tipoCuadro = document.querySelectorAll(".tipo-cuadro");
-
-//Creamos las funciones para cada elemento del filtro por cuadro
-tipoCuadro.forEach((e) => {
-    e.addEventListener("click",(filtro)=>{
-        filtro.preventDefault();
-        console.log(e)
-        filtro.target.innerHTML === "todos" ? mostrarTodo() : mostrarSolo(eval(filtro.target.innerHTML));
-    });
-});
-
 //Funciones que ocultan/muestran los elementos por clases
 function ocultar(e) {
     e.forEach(element => {
@@ -98,5 +86,15 @@ lineas.forEach((linea) => {
         console.log(linea);
         linea === "todos" ? grid.filter(`[data-linea]`) : grid.filter(`[data-linea="${linea}"]`);
         linea === "todos" ? nombrelinea = "" : nombreLinea = `="${linea}"`;
+    });
+});
+//Creamos las funciones para cada elemento del filtro por cuadro
+const tipoCuadro = document.querySelectorAll(".tipo-cuadro a");
+tipoCuadro.forEach((e) => {
+    e.addEventListener("click",(filtro)=>{
+        filtro.preventDefault();
+        tipoCuadro.forEach((e) => e.classList.remove("activo"));
+        filtro.target.classList.add("activo");
+        filtro.target.innerHTML === "todos" ? mostrarTodo() : mostrarSolo(eval(filtro.target.innerHTML));
     });
 });
