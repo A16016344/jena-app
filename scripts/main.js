@@ -4,6 +4,10 @@ const grid = new Muuri('.grid', {
         rounding: false
       }
 });
+window.onload = function(){
+    recargarGrid();
+    console.log('pagina cargada');
+};
 
 //Creamos los arreglos que contienen las fotos por clases
 const muuriSection = document.querySelector(".grid"); 
@@ -52,6 +56,7 @@ function mostrarSolo(e) {
 function recargarGrid() {
     grid.filter("[data-cargando]")
     grid.filter(`[data-linea${nombreLinea}]`)
+    console.log(nombreLinea)
 }
 
 //Codigo referente a mostrar y ocultar el overlay
@@ -61,9 +66,6 @@ const card = document.querySelector('.card')
 items.forEach((item)=>{
     item.addEventListener('click', (evento)=>{
         card.innerHTML = item.innerHTML;
-        card.innerHTML.includes("paquete") ? paquete = `Paquete%20${card.querySelector(".paquete").innerText.split(" ").join("%20")}` : "";
-        card.innerHTML.includes("Ingredientes a escoger") ? paquete += `%20_Ingredientes:_` : "";
-        card.innerHTML.includes("ocultar") ? paquete = card.querySelector(".ocultar").innerText.split(" ").join("%20") : "";
         document.querySelector('.overlay').classList.remove('ocultar');
         document.querySelector('#pedir').href = `https://wa.me/529993639814`
     });
@@ -71,6 +73,22 @@ items.forEach((item)=>{
 
 overlay.addEventListener('click', (e)=>{
     e.target.id === 'overlay' || e.target.id === 'cerrar' ? overlay.classList.add('ocultar') : '';
+});
+
+//Codigo referente a mostrar y ocultar el menu desplegable
+const menuIcon = document.querySelector("#menu-icon");
+const menuDesplegable = document.querySelector(".menu-desplegable");
+menuDesplegable.addEventListener('click', (e) => {
+    e.target.id === 'menu-desplegable' || e.target.id === 'cerrar' ? menuDesplegable.classList.add('ocultar') : '';
+});
+menuIcon.addEventListener('click',(e)=>{
+    menuDesplegable.classList.remove('ocultar');
+});
+
+const boton_filtro = document.querySelector(".boton-filtro");
+const filtros = document.querySelector(".filtros");
+boton_filtro.addEventListener('click', (e) => {
+    filtros.classList.toggle('ocultar');
 });
 
 //Codigo referente al filtro por linea
@@ -85,7 +103,7 @@ lineas.forEach((linea) => {
         const linea = opcion.target.innerHTML.toLowerCase();
         console.log(linea);
         linea === "todos" ? grid.filter(`[data-linea]`) : grid.filter(`[data-linea="${linea}"]`);
-        linea === "todos" ? nombrelinea = "" : nombreLinea = `="${linea}"`;
+        linea === "todos" ? nombreLinea = "" : nombreLinea = `="${linea}"`;
     });
 });
 //Creamos las funciones para cada elemento del filtro por cuadro

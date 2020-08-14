@@ -12,12 +12,12 @@
         <div class="logo">
             <img src="images/global/logo_header.png" alt="logo">
         </div>
-        <div class="menu-icon">
-            <span>Menú</span>
+        <div class="menu-icon" id="menu-icon">
+            <i class="far fa-caret-square-down"></i>
         </div>
     </header>
     <main class="main">
-        <nav>
+        <nav class="filtros ocultar">
             <div class="linea">
                 <a href="#" class="activo">Todos</a>
                 <a href="#">Slim</a>
@@ -183,11 +183,24 @@
             </div>
         </section>    
     </main>
-        <section class="overlay ocultar" id="overlay">
+    <div class="boton-filtro">
+        <i class="fas fa-filter"></i>
+    </div>
+    <section class="overlay ocultar" id="overlay">
         <i class="fas fa-times" id="cerrar"></i>
         <div class="card"></div>
         <div class="aviso">Archivos fotograficos en todos los paquetes.</div>
         <a href="https://wa.me/529993639814" class="button" id="pedir"><i class="fab fa-whatsapp"></i></a>
+    </section>
+    <section class="menu-desplegable ocultar" id="menu-desplegable">
+        <div class="menu">
+            <h1>Menú        <i class="fas fa-times" id="cerrar"></i></h1>
+            <a href="#">Inicio</a>
+            <a href="#">Paquetes Fotograficos</a>
+            <a href="#">Anillos</a>
+            <a href="#">Contacto</a>
+            <a href="#">Acerca de</a>            
+        </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/web-animations-js@2.3.2/web-animations.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/muuri@0.9.0/dist/muuri.min.js"></script>

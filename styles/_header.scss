@@ -1,9 +1,10 @@
-$colorPrimary : #7e000d;
-
 .header {
+    position: fixed;
+    width: 100%;
     background: $colorPrimary;
     display: flex;
     justify-content: space-between;
+    z-index: 500;
     .logo {
         max-width: calc(100% - 50px);
         img {
@@ -12,10 +13,10 @@ $colorPrimary : #7e000d;
         }
     }
     .menu-icon {
-        background: #FFF;
-        margin: 5px;
+        color: #FFF;
         align-self: center;
-        padding: 0.5em;
-        border-radius: 1em;
+        font-size: 2em;
+        margin-right: 0.5em;
+        cursor: pointer;
     }
 }
