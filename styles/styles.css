@@ -36,7 +36,24 @@
 }
 
 .grid .item {
-  width: 50%;
+  width: calc(50% - 10px);
+  border-radius: 1em;
+  margin: 5px;
+  -webkit-box-shadow: 5px 5px 2px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 5px 5px 2px 0px rgba(0, 0, 0, 0.75);
+}
+
+.grid .item[data-linea="slim"] .nombre-modelo {
+  background: #7e000d;
+}
+
+.grid .item[data-linea="lux"] .nombre-modelo {
+  background: gold;
+  color: black;
+}
+
+.grid .item[data-linea="basic"] .nombre-modelo {
+  background: gray;
 }
 
 .grid .item .item-content {
@@ -51,10 +68,15 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-radius: 1em;
+  overflow: hidden;
 }
 
 .grid .item .item-content .nombre-modelo {
   position: absolute;
+  padding: .25em .5em;
+  border-radius: 1em 0em / 1em 1em;
+  font-weight: bold;
   top: 0;
   left: 0;
 }
@@ -512,15 +534,15 @@ template {
 .overlay .card {
   min-width: 200px;
   width: 800px;
-  max-width: calc(100% - 2em);
-  max-height: calc(100vh - 6em);
+  max-width: calc(100% - 1em);
+  max-height: calc(100vh - 8em);
   position: absolute;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   background: white;
-  padding: 1em;
-  margin: 1em;
+  padding: 0.5em;
+  margin: 0.5em;
   margin-bottom: 2em;
   border-radius: 1em;
   overflow: auto;
@@ -528,7 +550,62 @@ template {
 
 .overlay .card img {
   max-width: 100%;
+  width: 100%;
   display: block;
+}
+
+.overlay .card .color {
+  display: none;
+}
+
+.overlay .card .nombre-modelo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #7e000d;
+  font-weight: bold;
+  padding: .25em 1em;
+  color: white;
+  border-radius: 0 0 1em 0;
+}
+
+.overlay .card .nombre-modelo::before {
+  content: "Modelo: ";
+}
+
+.overlay .card .panoramica, .overlay .card .agradecimiento, .overlay .card .diploma, .overlay .card .individual, .overlay .card .testimonial {
+  border: 2px solid #7e000d;
+  border-radius: 1em 1em 0 0;
+  overflow: hidden;
+  margin-bottom: 1em;
+}
+
+.overlay .card .panoramica::before, .overlay .card .agradecimiento::before, .overlay .card .diploma::before, .overlay .card .individual::before, .overlay .card .testimonial::before {
+  display: block;
+  width: 100%;
+  background: #7e000d;
+  color: white;
+  text-align: center;
+}
+
+.overlay .card .panoramica::before {
+  content: "Panoramica";
+}
+
+.overlay .card .agradecimiento::before {
+  content: "Agradecimiento";
+}
+
+.overlay .card .diploma::before {
+  content: "Diploma";
+}
+
+.overlay .card .individual::before {
+  content: "Individual";
+}
+
+.overlay .card .testimonial::before {
+  content: "Testimonial";
 }
 
 .ocultar {
@@ -683,14 +760,15 @@ template {
 }
 
 .boton-filtro {
+  font-size: 1.5em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: fixed;
   bottom: 1em;
   right: 1em;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   background: #7e000d;
   border-radius: 100%;
   -webkit-box-pack: center;
@@ -705,6 +783,11 @@ template {
           box-shadow: 5px 5px 2px 0px rgba(0, 0, 0, 0.75);
 }
 
+.boton-filtro:hover {
+  width: 62px;
+  height: 62px;
+}
+
 .filtros {
   width: 90%;
   max-width: 500px;
@@ -712,7 +795,7 @@ template {
   z-index: 500;
   background: #cecb46;
   margin: 1em;
-  bottom: calc(50px + 1em);
+  bottom: calc(60px + 1em);
   right: 0;
   border-radius: 1em;
   -webkit-box-shadow: 5px 5px 2px 0px rgba(0, 0, 0, 0.75);
@@ -723,9 +806,12 @@ template {
 
 .filtros.ocultar {
   display: block;
-  right: -100%;
+  right: -2em;
+  bottom: -2em;
+  margin: 0;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   overflow: hidden;
+  opacity: 0;
 }
 /*# sourceMappingURL=styles.css.map */

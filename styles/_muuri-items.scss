@@ -6,14 +6,38 @@
 
 .grid {
     .item {
-        width: 50%;
+        width: calc(50% - 10px);
+        border-radius: 1em;
+        margin: 5px;
+        box-shadow: 5px 5px 2px 0px rgba(0,0,0,0.75);
+        &[data-linea="slim"]{
+            .nombre-modelo{
+                background: $colorPrimary;
+            }
+        }
+        &[data-linea="lux"]{
+            .nombre-modelo{
+                background: gold;
+                color: black;
+            }
+        }
+        &[data-linea="basic"]{
+            .nombre-modelo{
+                background: gray;
+            }
+        }
         .item-content {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
+            border-radius: 1em;
+            overflow: hidden;
             .nombre-modelo {
                 position: absolute;
+                padding: .25em .5em;
+                border-radius: 1em 0em / 1em 1em;
+                font-weight: bold;
                 top: 0;
                 left: 0;
             }

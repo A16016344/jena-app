@@ -65,20 +65,55 @@
     .card {
         min-width: 200px;
         width: 800px;
-        max-width: calc(100% - 2em);
-        max-height: calc(100vh - 6em);
+        max-width: calc(100% - 1em);
+        max-height: calc(100vh - 8em);
         position: absolute;
         justify-content: center;
         background: white;
-        padding: 1em;
-        margin: 1em;
+        padding: 0.5em;
+        margin: 0.5em;
         margin-bottom: 2em;
         border-radius: 1em;
         overflow: auto;
         img {
             max-width: 100%;
+            width: 100%;
             display: block;
         }
+        .color {
+            display: none;
+        }
+        .nombre-modelo{
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: $colorPrimary;
+            font-weight: bold;
+            padding: .25em 1em;
+            color: white;
+            border-radius: 0 0 1em 0;
+            &::before{
+                content: "Modelo: ";
+            }
+        }
+        .panoramica, .agradecimiento, .diploma, .individual, .testimonial {
+            border: 2px solid $colorPrimary;
+            border-radius: 1em 1em 0 0 ;
+            overflow: hidden;
+            margin-bottom: 1em;
+            &::before {
+                display: block;
+                width: 100%;
+                background: $colorPrimary;
+                color: white;
+                text-align: center;
+            }
+        }
+        .panoramica::before{ content: "Panoramica";}
+        .agradecimiento::before{content: "Agradecimiento";}
+        .diploma::before{content: "Diploma";}
+        .individual::before{content: "Individual";}
+        .testimonial::before{content: "Testimonial"}
     }
 }
 
